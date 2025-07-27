@@ -1,0 +1,15 @@
+# PYTHON PRACTICE
+
+## SUBJECT 1
+
+### TOPIC A
+
+### TOPIC B
+
+## SUBJECT 2
+
+### TOPIC A
+
+### TOPIC B
+
+## COMMON
