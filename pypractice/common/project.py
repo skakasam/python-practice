@@ -77,3 +77,24 @@ class Project:
 
         project_str = f"{self._name}\n{subjects_str}" if subjects_str else self._name
         return project_str
+
+
+def create_project(project_ref: str) -> Project:
+    with open(file=project_ref, mode="r", encoding="UTF-8") as in_stream:
+        project_name = None
+        project_subj = []
+
+        for line in in_stream.readlines():
+            cleansed_line = line.rstrip()
+            if cleansed_line.startswith("PROJECT:"):
+                project_name = line.rstrip().split(":")[1]
+            elif cleansed_line.startswith("SUBJECT:"):
+                project_subj.append(line.rstrip().split(":")[1])
+
+    if project_name and project_subj:
+        project = Project(project_name)
+        project.add_subjects(*project_subj)
+    else:
+        raise ValueError("Unable to create a Project based on the reference file!")
+
+    return project
