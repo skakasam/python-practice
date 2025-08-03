@@ -82,14 +82,14 @@ class Project:
         return project_str
 
 
-def create_project(project_ref: str) -> Project:
-    project_ref_path = Path(project_ref)
+def create_project(project_details_ref: str) -> Project:
+    project_ref_path = Path(project_details_ref)
     if not project_ref_path.exists():
         raise FileNotFoundError(
             f"{os.path.basename(project_ref_path)} file doesn't exist!"
         )
 
-    with open(file=project_ref, mode="r", encoding="UTF-8") as in_stream:
+    with open(file=project_details_ref, mode="r", encoding="UTF-8") as in_stream:
         project_name = None
         project_subj = []
 
