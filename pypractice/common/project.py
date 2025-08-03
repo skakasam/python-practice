@@ -79,8 +79,8 @@ class Project:
         return project_str
 
 
-def create_project(project_ref: str) -> Project:
-    with open(file=project_ref, mode="r", encoding="UTF-8") as in_stream:
+def create_project(project_details_ref: str) -> Project:
+    with open(file=project_details_ref, mode="r", encoding="UTF-8") as in_stream:
         project_name = None
         project_subj = []
 
